@@ -1,18 +1,20 @@
+import { createBrowserHistory } from "history";
 import React from "react";
-import courses from "./utils/api/courses";
+import { Route, Router, Switch } from "react-router-dom";
+import GuestRoute from "./pages/GuestRoute";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 
 function App() {
-	const getData = async () => {
-		const dataCourse = await courses.all();
-		console.log(dataCourse.data.data);
-	};
-
-	getData();
+	const history = createBrowserHistory({ basename: process.env.PUBLIC_URL });
 
 	return (
-		<div className="container mx-auto">
-			<h1 className="text-2xl">Hallo Gaiss</h1>
-		</div>
+		<Router history={history}>
+			<Switch>
+				<GuestRoute path="/login" component={Login} />
+				<Route path="*" component={NotFound}></Route>
+			</Switch>
+		</Router>
 	);
 }
 

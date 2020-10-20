@@ -19200,6 +19200,18 @@ video {
   animation: bounce 1s infinite;
 }
 
+.on-light circle {
+  fill: #ed8936;
+}
+
+.on-light path {
+  fill: #1a202c;
+}
+
+.on-dark path {
+  fill: white;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

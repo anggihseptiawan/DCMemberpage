@@ -3,3 +3,15 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.on-light circle {
+	fill: #ed8936;
+}
+
+.on-light path {
+	fill: #1a202c;
+}
+
+.on-dark path {
+	fill: white;
+}
